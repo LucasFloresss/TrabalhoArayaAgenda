@@ -1,5 +1,8 @@
+//importa o express
 const express = require('express');
+//cria rotas com o express
 const router = express.Router();
+//importa as config
 const knex = require('./config');
 
 // mostrar todos os contatos
