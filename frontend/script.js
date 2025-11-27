@@ -1,4 +1,4 @@
-
+// pega as coisas do HTML pra você manipular no JS
 const API_URL = '/api';
 const formularioContato = document.getElementById('formularioContato');
 const inputNome = document.getElementById('nome');
@@ -9,6 +9,8 @@ const btnSalvar = document.getElementById('btnSalvar');
 const btnCancelar = document.getElementById('btnCancelar');
 const listaContatos = document.getElementById('listaContatos');
 const mensagemCarregando = document.getElementById('mensagemCarregando');
+
+// variavel pra saber se ta criando ou editando um contato
 let contatoEmEdicao = null;
 
 // inicializa tudo
@@ -18,13 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
   btnCancelar.addEventListener('click', cancelarEdicao);
 });
 
+//carrega e mostra mensagem
 async function carregarContatos() {
   try {
     mensagemCarregando.style.display = 'block';
     listaContatos.innerHTML = '';
 
     const resposta = await fetch(`${API_URL}/contatos`);
-    
+
+    //verifica se a resposta ta de acordo ou nao
     if (!resposta.ok) {
       throw new Error('Erro ao carregar contatos');
     }
@@ -36,17 +40,20 @@ async function carregarContatos() {
       listaContatos.innerHTML = '<div class="mensagem-vazia">Nenhum contato cadastrado.</div>';
       return;
     }
-
+    
+    //se tiver contatos, cria um card pra cada um e joga na tela
     contatos.forEach(contato => {
       const cartaoContato = criarCartaoContato(contato);
       listaContatos.appendChild(cartaoContato);
     });
+    //pra caso o servidor n ta rodando KKKKKKKKKKKKKK
   } catch (erro) {
     console.error('Erro:', erro);
     mensagemCarregando.innerHTML = 'Erro ao carregar contatos. Verifique se o servidor está rodando.';
   }
 }
 
+//cria o cartao com as informações fornecidas
 function criarCartaoContato(contato) {
   const div = document.createElement('div');
   div.className = 'contato-card';
