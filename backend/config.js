@@ -1,5 +1,9 @@
+
+
+//lê o arquivo .env e joga as variáveis pra dentro
 require('dotenv').config();
 
+// configura o knex pra conectar no MySQL
 const knex = require('knex')({
   client: 'mysql2',
   connection: {
