@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #252525 0%, #252525 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ta marcando como erro mas funciona memo assim, é por causa do formato da cor. */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #252525
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+
+header {
+  background: linear-gradient(135deg, #252525 0%, #252525 100%);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+main {
+  padding: 30px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  border-bottom: 3px solid #068002;
+  padding-bottom: 10px;
+}
+
+/* formulário */
+.formulario-section {
+  background: #252525;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #068002;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+/* Os com nome simples que nem o de abaixo é a config do botão em si, os que tem :algumacoisa são os efeitos, não ta repetido não */
+#btnSalvar {
+  background: #118032;
+  color: rgb(255, 255, 255);
+  flex: 1;
+}
+
+#btnSalvar:hover {
+  background: #117229; /* Cor do botoa muda levemente quando passar o mouse */
+  transform: translateY(-2px); /* botao move um pouco pra cima qnd passa o mouse em cima */
+  box-shadow: 0 5px 15px rgba(15, 187, 10, 0.4); /* Esse é o efeito de luz pra qnd passar o mouse */
+}
+
+/* saqui é tudo a mema coisa do de cima, so q pra cada botao, pq o css e chato e nao deixa faze pra tudo (ou eu so nao sei mesmo) */
+
+#btnCancelar {
+  background: #9b0000;
+  color: #333;
+  flex: 1;
+}
+
+#btnCancelar:hover {
+  background: #d40707;
+}
+
+/* Lista de contatos */
+.lista-contatos {
+  display: grid;
+  gap: 15px;
+}
+
+.contato-card {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.contato-card:hover {
+  border-color: #026107;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.contato-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 0.95em;
+  color: #000000;
+}
+
+.contato-info p {
+  margin: 0;
+}
+
+.contato-info strong {
+  color: #000000;
+  min-width: 80px;
+}
+
+.contato-acoes {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-editar {
+  background: #025f09;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s;
+}
+
+.btn-editar:hover {
+  background: #015308;
+  transform: translateY(-2px);
+}
+
+.btn-deletar {
+  background: #e74c3c;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s;
+}
+
+.btn-deletar:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Mensagens */
+.mensagem {
+  text-align: center;
+  padding: 20px;
+  color: #667eea;
+  font-size: 1.1em;
+}
+
+.mensagem-vazia {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  section h2 {
+    font-size: 1.4em;
+  }
+
+  .contato-card {
+    padding: 15px;
+  }
+
+  .contato-acoes {
+    flex-direction: column;
+  }
+
+  .btn-editar,
+  .btn-deletar {
+    width: 100%;
+  }
+}
+
